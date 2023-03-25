@@ -4,7 +4,7 @@ from app.request import Request
 from app.exceptions import BaseError
 
 store = Store({'печеньки': 16, 'собачки': 8, 'коробки': 11})
-shop = Shop({'печеньки': 9, 'собачки': 2, 'коробки': 3, 'лемонад': 2})
+shop = Shop({'печеньки': 6, 'собачки': 2, 'коробки': 3, 'лемонад': 2})
 
 
 def main():
