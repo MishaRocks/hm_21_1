@@ -7,10 +7,12 @@ class Shop(BaseStorage):
         super().__init__(items, capacity)
 
     def add(self, name, quantity):
-        if self.get_free_space() - self.items[name] <= 0 or not self.get_unique_items_count():
+        if self.get_free_space() + quantity > self.capacity or not self.get_unique_items_count():
             raise NotEnoughSpace
-        else:
+        elif name in self.items:
             self.items[name] += quantity
+        else:
+            self.items[name] = quantity
 
     def remove(self, name, quantity):
         self.items[name] -= quantity
